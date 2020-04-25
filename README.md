@@ -2,7 +2,7 @@
 
 CredChecker is a Tool to validate the provided username/email and password against multiple social media accounts. It will provide the summarized results that how many of them are successfull.
 
-Usage: login_checker.py [-h] [-l] [-cs CUSTOM_SITES] [-u USERNAME] [-p PASSWORD]
+Usage: main.py [-h] [-l] [-cs CUSTOM_SITES] [-u USERNAME] [-p PASSWORD]
 
 Credential Checker V 1.0
 
