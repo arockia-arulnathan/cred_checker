@@ -1,0 +1,95 @@
+google:
+  open_type: browser
+  username_xpath: //*[@id="identifierId"]
+  username_next_xpath: //*[@id="identifierNext"]
+  password_xpath: //input[@name="password"]
+  password_next_xpath: //*[@id="passwordNext"]
+  login_url: https://accounts.google.com/signin/v2/identifier?hl=en&passive=true&continue=https%3A%2F%2Fwww.google.com%2F&flowName=GlifWebSignIn&flowEntry=ServiceLogin
+  result_patterns:
+    success: ''
+    failure: 
+      - Couldn't find your Google Account
+      - Wrong password. Try again or click Forgot password to reset it.
+
+twitter:
+  open_type: browser
+  username_xpath: //input[@name="session[username_or_email]"]
+  password_xpath: //input[@name="session[password]"]
+  login_button_xpath: //div[@data-testid="LoginForm_Login_Button"]
+  login_url: https://twitter.com/login
+  result_patterns:
+    success: ''
+    failure: password you entered did not match our records
+
+facebook:
+  open_type: browser
+  username_xpath: //*[@id="email"]
+  password_xpath: //*[@id="pass"]
+  login_button_xpath: //input[@value="Log In"]
+  login_url: https://www.facebook.com/
+  result_patterns:
+    success: ''
+    failure:
+      - Wrong credentials
+      - The password that you've entered is incorrect.
+      - you've entered doesn't match any account.
+
+github:
+  open_type: browser
+  username_xpath: //*[@id="login_field"]
+  password_xpath: //*[@id="password"]
+  login_button_xpath: //input[@value="Sign in"]
+  login_url: https://github.com/login
+  result_patterns:
+    success: ''
+    failure:
+      - Incorrect username or password
+
+
+linkedin:
+  open_type: browser
+  username_xpath: //*[@id="username"]
+  password_xpath: //*[@id="password"]
+  login_button_xpath: //button[@aria-label="Sign in"]
+  login_url: https://www.linkedin.com/login
+  result_patterns:
+    success: ''
+    failure:
+      - Please try again.
+    failure_xpaths:
+      - //*[@id="error-for-username"]
+      - //*[@id="error-for-password"]
+      - //*[@id="login_form_validation_error_username"]
+      - //*[@id="consumer_login__text_plain__invalid_username"]
+      - //*[@id="consumer_login__text_plain__large_username"]
+      - //*[@id="consumer_login__text_plain__invalid_username_with_phone_v2"]
+      - //*[@id="consumer_login__text_plain__no_username"]
+
+
+instagram:
+  open_type: browser
+  username_xpath: //input[@name="username"]
+  password_xpath: //input[@name="password"]
+  login_button_xpath: //button[@type="submit"]
+  login_url: https://www.instagram.com/?hl=en
+  result_patterns:
+    success: ''
+    failure:
+      - The username you entered doesn't belong to an account. Please check your username and try again.
+      - Sorry, your password was incorrect. Please double-check your password.
+
+pinterest:
+  open_type: browser
+  login_popup_xpath: //div[contains(text(), 'Log in')]
+  username_xpath: //*[@id="email"]
+  password_xpath: //*[@id="password"]
+  login_button_xpath: //button[@class="red SignupButton active"]
+  login_url: https://www.pinterest.com/
+  result_patterns:
+    success: ''
+    failure:
+      - The username you entered doesn't belong to an account. Please check your username and try again.
+      - Sorry, your password was incorrect. Please double-check your password.
+    failure_xpaths:
+      - //*[@id="email"]
+      - //*[@id="password"]
